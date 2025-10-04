@@ -3,12 +3,7 @@ import faiss
 
 
 def build_faiss_index(embeddings, doc_ids=None):
-    """
-    Build a FAISS index with normalized vectors for cosine similarity.
-    
-    This uses Inner Product on normalized vectors, which gives us cosine similarity.
-    It's better than L2 distance for text similarity.
-    """
+    """Build a FAISS index for cosine similarity search."""
     print("Building FAISS index for cosine similarity...")
     
     dimension = embeddings.shape[1]

@@ -1,6 +1,6 @@
 # Model settings
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-GENERATION_MODEL = "x-ai/grok-4-fast:free"
+GENERATION_MODEL = "deepseek/deepseek-chat-v3.1:free"
 
 # API settings
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"

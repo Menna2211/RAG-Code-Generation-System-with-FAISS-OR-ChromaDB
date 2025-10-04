@@ -63,11 +63,6 @@ def generate_code_for_task(pipeline, task_description, num_examples=DEFAULT_NUM_
     
     retrieved_examples = [pipeline['examples'][idx] for idx in indices]
     
-    # Show what we found
-    print(f" Found {len(retrieved_examples)} similar examples:")
-    for i, (example, similarity) in enumerate(zip(retrieved_examples, similarities), 1):
-        print(f"   {i}. {example['task_id']} (score: {similarity:.4f})")
-    
     # Generate code if we have an API client
     if pipeline['code_client']:
         generated_code = generate_code(
@@ -114,7 +109,7 @@ def load_pipeline_with_index(filepath=FAISS_INDEX_PATH, api_key=None, embedding_
     embedding_model = load_embedding_model(embedding_model_name)
     code_client = setup_code_generator(final_api_key) if final_api_key else None
     
-    print("✅ Pipeline ready with loaded index!")
+    print(" Pipeline ready with loaded index!")
     
     return {
         'examples': examples,
@@ -156,7 +151,6 @@ def calculate_median(numbers: List[float]) -> float:
     test_cases = [
         "Write a function to reverse a string without using built-in reverse",
         "Create a function that finds all prime numbers up to n",
-        "Write a function to calculate the fibonacci sequence",
         "Create a function that checks if a number is a perfect square"
     ]
 

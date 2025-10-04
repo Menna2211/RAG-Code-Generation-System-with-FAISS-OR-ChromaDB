@@ -44,7 +44,7 @@ def extract_code_from_response(response):
     return response.strip()
 
 
-def generate_code(client, task, examples, model="x-ai/grok-4-fast:free", 
+def generate_code(client, task, examples, model="deepseek/deepseek-chat-v3.1:free", 
                  max_tokens=500, temperature=0.2):
     """Generate code using the LLM with context from similar examples."""
     print(" Generating code...")
